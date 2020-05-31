@@ -1,3 +1,3 @@
 # Library Management
-Full stack library management system - React, Flask and MySQL
+Library management system using React, Flask and MySQL
 
