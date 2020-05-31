@@ -13,7 +13,7 @@ app = Flask(__name__, static_folder="../static/dist",
 
 # enter your username and password
 cnx = mysql.connector.connect(
-    user='akshara', password='1234', database='LMS', charset='utf8')
+    user='', password='', database='LMS', charset='utf8')
 cursor = cnx.cursor(prepared=True)
 
 
