@@ -173,7 +173,7 @@ class Fine extends React.Component {
            : null
          }
           </div>
-          : <div className='noResultsFine'><span>No results found</span></div> : <span>Loading...</span>
+          : <div className='noResultsFine'><span>Hurray! No fines overdue!</span></div> : <span>Loading...</span>
 
        }
      </div>

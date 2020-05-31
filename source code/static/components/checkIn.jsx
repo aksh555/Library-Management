@@ -100,7 +100,7 @@ class CheckIn extends React.Component {
      <div className ='row-fluid'>
       <div className ='col-md-6'>
     <div className={"input-group "+bookSearchClassName}>
-     <input type="text" className="form-control" placeholder="enter keywords to search for check in" name='search' onKeyPress={this.handleSearch} ref={(input)=>{this.searchInput=input}} / >
+     <input type="text" className="form-control" placeholder="Enter Card ID/ISBN.." name='search' onKeyPress={this.handleSearch} ref={(input)=>{this.searchInput=input}} / >
        <span className="input-group-btn">
          <button className="btn btn-primary" type="button" name = 'go' onClick={this.handleSearch}> Go </button>
        </span>

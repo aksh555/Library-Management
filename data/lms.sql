@@ -10,3 +10,8 @@ CREATE TABLE BORROWER(Card_id VARCHAR(10) primary key ,Ssn varchar(9) NOT NULL u
 CREATE TABLE BOOK_LOANS(Loan_id INT unsigned AUTO_INCREMENT primary key,Isbn VARCHAR(10) ,Card_id VARCHAR(10) ,Date_out datetime, Due_date datetime,Date_in datetime,FOREIGN KEY(Isbn) references BOOK(Isbn),FOREIGN KEY(card_id) references BORROWER(Card_id));
  
 CREATE TABLE FINES(Loan_id INT unsigned primary key , Fine_amt DOUBLE, Paid boolean,FOREIGN KEY(Loan_id) references BOOK_LOANS(Loan_id));
+
+CREATE UNIQUE INDEX idx_isbn ON BOOK (Isbn);
+CREATE UNIQUE INDEX idx_cardid ON BORROWER (Card_id);
+
+CREATE VIEW fine_view AS SELECT b.Bname AS bname, SUM(f.Fine_amt) AS fines, f.Paid AS paid, bl.Card_id AS card_id FROM ((LMS.FINES f JOIN BOOK_LOANS bl ON ((f.Loan_id = bl.Loan_id))) JOIN BORROWER b ON ((bl.Card_id = b.Card_id)));
