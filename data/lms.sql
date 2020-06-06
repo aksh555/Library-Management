@@ -3,7 +3,7 @@ CREATE DATABASE LMS;
 USE LMS;
 CREATE TABLE BOOK(Isbn VARCHAR(10) primary key, Title VARCHAR(1000) not null, isCheckedOut boolean);
 
-CREATE TABLE AUTHORS(Author_id INT UNSIGNED primary key, Name VARCHAR(100));
+CREATE TABLE AUTHORS(Author_id INT UNSIGNED primary key, Name VARCHAR(100), FOREIGN KEY(Country_id) references COUNTRY(Id));
 
 CREATE TABLE BOOK_AUTHORS(Isbn VARCHAR(10),Author_id INT UNSIGNED  ,primary key(Author_id,Isbn),FOREIGN KEY(Author_id) references AUTHORS(Author_id),FOREIGN KEY(Isbn) references BOOK(Isbn));
 
